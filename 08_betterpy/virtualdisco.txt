@@ -1,0 +1,13 @@
+Team AutoKAD Andrew Jiang, Dean Carey, Carlos "Karl" Hernandez
+SoftDev
+K08 -- Cross Pollination and Virtual Insanity/Learn what python virtual environments do and how we as a software
+2020-10-03
+
+
+`python3 -m venv' is a command that tells python to run a virtual environment script. What the script allows the user to do is to create a
+new workspace that contains a new python binary that has no external modules in place. The name of the workspace is given by the argument
+after venv, '~/myherozero'. However, just because the user runs the command doesn't mean the environment is activated. Instead, the user
+must run the command `source ~/myherozero/bin/activate`. This will start the virtual environment and to be deactivated, the user simply
+runs the command `deactivate`. In addition, since this workspace is fresh, there will be no external library transferred from your overall
+system. The benefits of the environment are clear: to make sure your project has only the libraries it requires. A user can then mess
+around separately from multiple projects to create and make sure their project does not become overwhelmed with additional unnecessary resources. 

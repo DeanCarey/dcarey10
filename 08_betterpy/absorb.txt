@@ -1,0 +1,13 @@
+Team AutoKAD Andrew Jiang, Dean Carey, Carlos "Karl" Hernandez
+SoftDev
+K08 -- Cross Pollination and Virtual Insanity/Analyze other team's code and record questions, comments, and concerns pertaining to their methods.
+2020-10-03
+
+We really like Team Ethan and Dean because they were able to do it by reading the documentation and it was an efficient and concise code.
+Everyone else created a dicitonary by parsing therough the csv file but their group were able to do it by using a method they found in the
+csv library. We also took a look at Team Window 9's because they were able to accomplish the task only using random. In addition, they were
+able to read the csv file and print out an occupation using an algorithm they made and print out an occupation using an algorithm they
+made. Our only comment is that their program was a bit lacking in terms of documentation.
+
+
+
