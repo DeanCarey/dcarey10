@@ -1,0 +1,17 @@
+Team AutoKAD Andrew Jiang, Carlos "Karl" Hernandez, Dean Carey 
+SoftDev
+K09 -- Simple Path to Greatness/analyze snippet of flask code and run it 
+2020-10-07
+
+Q0: We've seen similar syntax in Java as we are initializing a Flask object with arguments __name__ which is the name of the file. In python specitically, we've seen this with `if __name__ == "__main__:"`. 
+
+Q1: '/' is used to denote going inside a directory. In URLs, it is the same case, but you render different parts of the website according to the directory you are in. We've seen this when specifying path for command lines such as cd, mv, or cp. The @ symbol is syntax for flask. 
+
+Q2: It will print to Standard Out unless you are on the application, in which case it will run on local host.  
+
+Q3: It will print __main__ if you run it with python3, and the name of the file if you use `flask run`. the return statement will print out in local host if ran correctly. 
+
+Q4: Java's dot operator invokes methods within the object's class. 
+
+---------------------------------------------------------------------------------
+We noticed that it ran on port 5000, presumably it is the default port. In addition, it used 127.0.0.1 which is the local host. I am wondering if multiple flask applications can be ran on different ports. Another surprising thing was that it printed the return statement using plaintext rather than html. Another interesting observation is that every time we ran the application or refreshed the website, it sent a GET http request to the terminal. It also said it was running as a development server and as a production environment. We were confused as to what exactly a WSGI server was, so we looked it up. It stands for Web Server Gateway Interface and it is responsible for rendering our return statement. 
