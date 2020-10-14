@@ -1,0 +1,10 @@
+Team AutoKAD: Carlos "Karl" Hernandez, Dean Carey, and Andrew Jiang
+SoftDev
+K11: Some Things Never Change/ We investigated what could be run in the static root for flask.
+2020-10-13
+
+The first thing we noticed is that you don't need an `@app.route('/static/')` to render "static" pages. Flask automatically does this for you - meaning that it looks for a static directory by itself.
+The next we noticed were the http response codes we got when we went into different directories. For example, root page ("index") we got a code 200, but when we went into /static/foo.html we got a code 304
+not modified. Most importantly, however we determined that `static/foo` does not load anything, instead it prompted us to download foo for us.
+
+We predict that any file without a file extension, or a file that is not .html,.css, or .jss, or an image file (maybe even a gif)? Basically anything that is hosted the web normally.

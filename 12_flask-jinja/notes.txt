@@ -1,0 +1,6 @@
+Team AutoKAD: Andrew Jiang, Dean Carey, and Carlos Hernandez
+SoftDev
+K12:...or The Only Constant is Change? / We started to acknowledge the power of templates and their use for dynamic websites using flask with Jinja2
+2020-10-15
+
+When the arguments of foo and collection are not passed to the function render_template() the site still loaded, however, there was no text that was printed. Additionally, we discovered that how useful template engine are for making quick edits. Most importantly, we discovered that templates worked the same way as static, where flask is actively looking for these directories to use for rendering html

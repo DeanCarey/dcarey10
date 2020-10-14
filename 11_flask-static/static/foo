@@ -1,0 +1,6 @@
+this here some plaintext tho
+
+Q: What happens when you access this file
+     via http://localhost:5000/static/foo ?
+
+It doesn't render for some reason. In firefox, it prompts me to download the file.
