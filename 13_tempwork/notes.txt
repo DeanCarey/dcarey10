@@ -1,0 +1,8 @@
+# Team Unhelpables (Jeffrey Huang, Dean Carey, Matthew Hui)
+# SoftDev
+# K13 -- Template for Success
+# 2020-10-19
+
+- after identifying all of our app.py codes, we went with Jeffrey's version of it and made it even more concise
+- opening a csv file that isn’t in the same directory as app.py just requires you to specify the path, which in this case is just the ‘data’ folder in the same directory
+- From reading “Egoless Programming”, we learned that we should be open to criticism and feedback regarding our code
