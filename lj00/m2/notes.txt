@@ -1,0 +1,47 @@
+        JSON:
+-Javascript Standard Object Notation
+        ~Start & End with {}
+        ~separate keys and values with :
+        ~separate each key:value pair with ,
+        ~"Keys (or fields)" are surrounded by ""
+-Pros: User-Friendly, Readable, Familiar to devs
+-Cons: Text-based (slow), space-consuming, limited to basic datatypes
+
+        BSON:
+-Binary JSON
+        ~Optimized for Speed, Space, & Flexibility
+-Encodes in binary vs Strings
+-Supports string, bool, number(int, float, long, etc), array, date, raw binary
+-Easily & Quickly Readable
+
+        JSON vs BSON:
+-MongoDB stores data in BSON, which can then be viewed in JSON
+-Uses of JSON:
+        ~Exporting to a local system for viewing
+-Uses of BSON:
+        ~Exporting to a different system for storage/backup (ex. USB)
+-URI string > Uniform Resource Identifier
+        ~srv - establishes a secure connection
+                >> mongodb+srv://<user>:<password>@clusterURI.mongodb.net/<database>
+-Export commands:
+        1. mongodump --uri "<Atlas Cluster URI>" --> exports data in BSON
+        2. mongoexport --uri "<Atlas Cluster URI>" --> exports data in JSON
+                       --collection=<collection name> --> specifies collection
+                       --out=<filename>.json --> specifies filename
+-Import commands:
+        3. mongorestore --uri "<Atlas Cluster URI>" --> imports data in BSON dump
+                        --drop dump --> removes existing database from location (prevents duplication errors)
+        4. mongoimport --uri "Atlas Cluster URI" --> imports data in JSON
+                       --drop=<filename>.json --> specifies filename
+-Find command:
+	1. Connect with $mongo "mongodb+srv://sandbox.mgsss.mongodb.net/admin" --username m001-student
+	2. > show dbs
+	3. Select a database with > use <database name>
+	4. > show collections
+	5. db.<collection name>.find({"field": value})
+	6. $ it --> iterates through a cursor
+		~Cursor --> A pointer to a result set of a query
+		~Pointer --> A direct address of the memory location
+	~ + .count("key") --> returns the resultant # of matching pairs
+	~ + .pretty() --> makes data easier to read
+	

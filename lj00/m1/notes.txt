@@ -1,0 +1,13 @@
+	MongoDB:
+-NoSQL Database, stored as Documents in Collections (not tablified rows & columns)
+	~Document > Field-value pairs used to organize data
+	~Collections > Organized store of documents
+-MongoDB managed by Atlas
+	~Clusters > Created as groups of servers meant to store data
+	~Replica Sets > Act as backups for instances of data
+	~Instance > A single machine (local/cloud) running individually
+-Connect Access
+	~0.0.0.0 IP allows access from anywhere
+	~m001-student username
+	~m001-mongodb-basics password
+
