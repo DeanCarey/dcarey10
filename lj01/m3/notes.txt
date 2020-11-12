@@ -1,0 +1,81 @@
+Team Late Risers (Dean Carey, Winnie Huang, Madelyn Mao)
+SoftDev
+LJ01: Le Voyage de Learnination avec Mongo, Deuxième Phase 
+Summary: notes from chapter 3 of MongoDB course
+2020-11-06
+
+Chapter 3: Creating and Manipulating Documents
+
+Inserting New Documents:
+Every document must have a unique _id value (other fields can have the same value)
+{“_id” : “1a”}
+{“_id” : “1b”}
+{“_id” : “4c”}
+{“_id” : “2a”}
+ObjectId() - default value for the _id field unless otherwise specified
+How to insert documents using Mongo shell (cannot do this if the _id value is the same as another document already in the collection):
+connect to Atlas cluster
+navigate to the needed database
+use sample_training
+get random document from the collection
+db.inspections.findOne()
+copy the random document and try to insert it into the collection
+db.inspections.insert({
+	“_id” : ObjectId(“56d61033a378eccde8a8354f”), 
+	“certificate number” : 9278806
+}) //would NOT work
+db.inspections.insert({ 
+	“certificate number” : 9278806
+}) //would work
+Insert multiple documents by using an array
+db.collection.insert([{<doc1>}, {<doc2>}])
+Use {“ordered” : false} to disable the default ordered insert (doesn’t read left to right, but all at once)
+Collections and databases are created when they are being used
+use tools followed by db.tractors.insert({<tractor doc>}) creates the tools.tractors namespace
+
+Updating Documents:
+One Document:
+updateOne()
+findOne()
+Many Documents:
+updateMany()
+find()
+Update operators:
+increments field value by a specified amount
+{“$inc”:{“pop”:10, “<field2>”:<increment value>, … }}
+sets field value to a new specified value
+{“$set”:{“pop”:17630, “<field2>”:<new value>, … }}
+adds an element to an array field
+{“$push”:{<field1>:<value1>, … }}
+How to update documents using Mongo shell:
+connect to Atlas cluster
+navigate to needed database
+use sample_training
+specify documents in the collection
+db.zips.find({“zip”:“12534”}).pretty()
+db.zips.find({“city”:“HUDSON”}).pretty()
+update using operators
+db.zips.updateOne({"zip":"12534"},{"$set":{"pop":17630}})
+db.zips.updateMany({"city":"HUDSON"},{"$inc":{"pop":10 }})
+	** can combine steps 4 and 5:
+		db.grades.updateOne({"student_id":250,"class_id":339},
+{"$push":{"scores":{"type":"extra credit",
+  "score": 100}
+}
+})
+
+Deleting Documents and Collections:
+One Document:
+deleteOne()
+should specify the _id of document to delete
+db.inspections.deleteOne(“_id”:11)
+Many Documents:
+deleteMany()
+should specify criteria of documents to delete
+db.inspections.deleteMany(“test”:1)
+Collection:
+--drop <collection name>.json //bash
+db.<collection name>.drop() //mongo shell
+After these commands are issued the data is GONE
+
+

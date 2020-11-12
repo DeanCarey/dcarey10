@@ -1,0 +1,73 @@
+Team Late Risers (Dean Carey, Winnie Huang, Madelyn Mao)
+SoftDev
+LJ01: Le Voyage de Learnination avec Mongo, Deuxième Phase 
+Summary: notes from chapter 4 of MongoDB course
+2020-11-06
+
+Chapter 4: Advanced CRUD Operations
+
+Query Operators:
+provide additional ways to locate data within the database
+preceded MQL operators
+preceded Aggregation pipeline stages
+allows access to field values
+Comparison Operators: 
+{<field> : {<operator> : <value>}}
+$eq equal to (default operator when an operator is not specified)
+$neg not equal to
+$gt greater than
+$gte greater than or equal to
+$lt less than
+$lte less than or equal to
+Logic Operators:
+{<operator> : [{statement1}, {statement2}, … ]}
+$and match all of the specified query clauses (default operator when an operator is not specified)
+$or at least one of the query clauses is matched
+$nor fail to match both given clauses
+{$not: {statement}}
+$not negates the query requirement
+Expressive Query Operators:
+{$expr : {<expression>}}
+ie. {“$expr”:{“$eq”:[“$end station id”,“$start station id”]}}
+$expr allows the use of aggregation expressions within the query language, can be used to compare field within a document
+$expr allows us to use variables and conditional statements
+syntax for comparison operators using aggregation (DIFF FROM COMPARISON OPERATORS): {<operator>:{<field>, <value>}}
+Array Operators:
+{“$push”:{<field1>:<value1>, … }}
+$push allows us to add an element to an array
+$push turns a field into an array field if it was previously a different type
+	{<array field>:{“$size”:<number>}}
+$size returns a cursor with all documents where the specified array field is exactly the given length
+	{<array field>:{“$all”:<array>}}
+$all returns a cursor with all documents in which the specified array field contains all the given elements regardless of their order in the array
+$:
+denotes the use of an operator
+addresses the field value
+
+Projection:
+db.<collection>.find({<query>},{<projection>})
+specifies which fields should or should not be included in the result cursor
+1 - include the field
+0 - exclude the field
+use only 1s or only 0s
+only get the highlighted fields:
+db.<collection>.find({<query>},{<field1>:1, <field2>:1})
+get all the fields except the ones specified:
+db.<collection>.find({<query>},{<field1>:0, <field2>:0})
+ONLY EXCEPTION is when you exclude _id field (included by default):
+db.<collection>.find({<query>},{<field1>:1, “_id”:0})
+
+$elemMatch:
+{<field>:{“$elemMatch”:{<field>:<value>}}}
+matches documents that contain an array field with at least one element that matches the specified query criteria OR
+projects only the array elements with at least one element that matches the specified criteria
+
+Querying Array Operators and Sub-Documents:
+db.collection.find({“<field 1>.<subfield>.<subbfield>”:“value”})
+MQL uses dot-notation to specify the address of nested elements in a document
+to use dot-notation in arrays specify the position of the element in the array
+db.companies.find({"relationships":
+{"$elemMatch":{"is_past":true,
+    "person.first_name":"Mark"}}},
+{ "name": 1 })
+
