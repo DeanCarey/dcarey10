@@ -1,0 +1,40 @@
+Team Unhelpables (Dean Carey, Matthew Hui, Jeffery Huang)
+SoftDev
+LJ02 -- Le Voyage de Learnination avec Mongo, Troisième Phase
+Mongo Chapter 5 Notes
+2020-11-23
+
+Aggregation Framework
+	- Query data in MongoDB
+	- Utilizes pipelines
+	- Executes actions in order
+	- Data is locally sourced within pipeline
+		--> ex: db.listingsAndReviews.aggregate([ 
+			{ "$match": { "amenities": "Wifi"} },
+			{ "$project": { "price": 1, "address": 1, "_id": 0 }} ]). pretty()
+	
+	- $group: an operator that takes the incoming stream of data, and siphons it into multiple distinct reservoirs
+		--> ex: { $ group: 
+			{ _id: <expression>, // group by expression
+			<field>: { <accumulator1> : <expression1> }, ... } }
+
+limit() and sort()
+	- Local methods, do not interfere with master dataset
+		--> ex: db.zips.find().sort({ "pop": 1, "city": -1 })
+			~ pop increasing from 0 to infinity
+			~ city decreasing from Z to A
+	- limit() without / before sort() gives unordered results
+
+Indexes
+	- Efficient queries
+	- Index: data structure that stores a portion of a collection's data set in an easy to traverse form
+		--> ex (single field): db.trips.createIndex({"birth year": 1})
+		--> ex (compound): db.trips.createIndex({"start station id": 1, "birth year": 1})
+Upsert
+	- Modify document by updating queries
+		~ db.collection.updateOne({<query to locate>}, {<update>})
+	- upsert = update + insert
+		~ db.collection.updateOne({<query>}, {<update>}, {"upsert": true})
+	- upsert is true:
+		1. match = update matched document
+		2. no match = insert new document

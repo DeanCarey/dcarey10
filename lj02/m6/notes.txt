@@ -1,0 +1,59 @@
+Team Unhelpables (Dena Carey, Matthew Hui, Jeffery Huang)
+SoftDev
+LJ02 -- Le Voyage de Learnination avec Mongo, Troisième Phase
+Mongo Chapter 6 notes
+2020-11-24
+
+Data Explorer:
+~ Indexes tab
+	- View indexes in collection
+	- Create/drop indexes
+	- Performance advisor
+
+~ Schema Anti-Patterns tab
+	- Gives suggestions based on existing documents (MongoDB Grammarly?)
+
+~ Aggregation tab
+	- Build aggregation pipelines
+	- View data transfer
+	- export pipeline code to language
+
+~ Search Indexes tab
+	- Search your indexes (eureka!)
+
+Atlas Products and Options:
+~ Organization Access Manager 
+	- Groups projects, teams, and billing
+
+~ Realm offers services
+	- Dev control to build apps / integrate Atlas data into preexisting application
+
+~ Charts
+	- Create data visuals
+
+Compass:
+- MongoDB GUI, allows exploration and manipulation of data
+
+- DON'T TOUCH: admin, config, local databases
+
+~ Documents tab
+	- Shows documents in collection
+	- Filter
+	- Formatting
+	- Import queries to language
+
+~ Aggregation tab
+	- Same as Data Explorer 
+
+~ Schema tab
+	- Analyzes document schema to provide document shape schematic
+
+~ Index tab
+	- Create new indexes
+
+~ Explain Plan tab
+	- Description of data path from master database
+	- Understand & improve query performance
+
+~ Validation tab
+	- Create parameters for data written to database
