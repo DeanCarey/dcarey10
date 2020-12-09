@@ -1,0 +1,25 @@
+#Team Lach On (Maddy Andersen, Dean Carey, Kelly Huang, Erin Lee)
+#SoftDev -- Rona Ed.
+#K14: Form and Function: Flask app to echo user input via HTML
+#Due Dec 10 2020 
+
+> request.form does not work in authenticate(), so we need to use request.args for the username value
+> request.method gets you the type of method (GET, POST)
+> restricting methods to 'POST' gives us "Method not allowed" printed on the response page (even if we change request.args to request.form).
+> can't test POST, the form/response only works with GET with what we have.
+
+print(app)
+    expected output: the name of the app
+    actual output: <Flask 'app'>
+print(request.method)
+    expected output: GET
+    actual output: GET
+print(request.args)
+    expected output: dictionary of the form's keys and values based on query string
+    actual output: ImmutableMultiDict([('username', 'hello'), ('sub1', 'Submit')])
+print(request.form)
+    expected output: ImmutableMultiDict([('username', 'hello'), ('sub1', 'Submit')])
+    actual output: ImmutableMultiDict([])
+print(request.headers)
+    expected output: thought it would print out headers from the browser (as we learned in class)
+    actual output: information about the browser like Host, Connection, language, etc.

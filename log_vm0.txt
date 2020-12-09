@@ -1,0 +1,4 @@
+Creating A Droplet in Digital Ocean:
+
+ - Sign in and navigate to control panel
+ - Ubuntu, Basic plan, $5/mo server, SSH key found on github account settings
