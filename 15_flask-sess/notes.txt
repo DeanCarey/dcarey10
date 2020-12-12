@@ -1,0 +1,4 @@
+#Team Lach On (Maddy Andersen, Dean Carey, Kelly Huang, Erin Lee)
+#SoftDev -- Rona Ed.
+#K15: Sessions Greetings: Flask app that uses session capabilities to allow a user to login and logout.
+#Due Dec 14 2020
