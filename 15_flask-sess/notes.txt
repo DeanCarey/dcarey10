@@ -2,3 +2,12 @@
 #SoftDev -- Rona Ed.
 #K15: Sessions Greetings: Flask app that uses session capabilities to allow a user to login and logout.
 #Due Dec 14 2020
+ We used session.pop() to end sessions, but maybe it's possible to replace the session instead of popping it?
+ Learned to make a route for a specific logout button, return to login page with successful logout message
+ Struggled a lot with making the logout button, first used <submit>, then <logout>, then changed to <form> with an input like in the login.html file
+ Used value to display a specific name for input button
+ name does not change the name displayed, still displayed submit
+ Session remembers your login data even when you close the page (super satisfying to see we were still logged in)
+ Will want to delete login error messages for future use/projects, but good to have for debugging
+ Why do we need a secret key? How does it work?
+ Possibilities to expand to a database instead of hard-coded username and password, possible use for DigitalOcean droplets or MongoDB
