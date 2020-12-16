@@ -1,0 +1,48 @@
+Team Lach On (Maddy Andersen, Dean Carey, Kelly Huang, Erin Lee)
+SoftDev —— Rona Ed.
+K16 —— No Trouble Python: script to import CSV data into a relational database
+Due 2020-12-16
+
+- Before starting our python script, we experimented with the sqlite shell,
+  specifically practicing how to create a table, how to add values to the table,
+  and how to print the table in the terminal. The commands we ran were:
+    sqlite> CREATE TABLE hello (name TEXT, class TEXT, id INTEGER PRIMARY KEY);
+    sqlite> INSERT INTO hello VALUES ("Maddy", "Great Books", 1);
+    sqlite> SELECT * FROM hello;
+  and the output was:
+    Maddy|Great Books|1
+  With this, we were able to apply these successful commands to our python script.
+- While semi-colons are required while running commands in the sqlite shell, do
+  we need to include them in our c.execute() commands?
+- Related to the above note, we kept forgetting to include semi-colons! Just something
+  to remember when working with sqlite shell, though the shell will prompt you for a
+  semicolon if you forget.
+- We had trouble populating our table with values from our CSV files. We originally
+  tried to do:
+    c.execute("INSERT INTO students VALUES(row['name'], row[age], row[id]);")
+  We then set row['name'], row['age'], and row['id'] equal to variables and tried:
+    c.execute("INSERT INTO students VALUES(" + name + "," + age + "," + id + ");")
+  excluding the variables from our string. We still got errors, until we realized
+  that the variable for row['name'] had to be within its own set of quotations (as
+  it has a type of TEXT). After concatenating the string needed for the command, we ended up with:
+    c.execute("INSERT INTO students VALUES('" + name + "'," + age + "," + id + ");")
+  The ages/id/etc. will be inserted into the table as integers even though they were read
+  from the CSV file as strings since they don't have quotations around them, which is
+  very convenient for us (we don't need to convert to float or int).
+- In order to confirm that our script worked and that our tables were properly
+  populated, we tried to do print(c.execute("SELECT * FROM <table name>;"")),
+  which was unsuccessful. We then realized we could run a test directly from the
+  terminal.
+    $sqlite3 foo
+      sqlite> SELECT * FROM <table name>;
+  If we don't include the "foo" or any other db file, we will essentially start up the shell
+  with a blank slate and nothing set up yet. With the "foo" file, we can update a specific database
+  or table, essentially saving our work.
+- We accidentally inserted our values from students.csv into our courses table (twice), so going
+  forward, we just have to be mindful of which table we are working with at any
+  given time, and make sure that the execute function is specific to the table
+  (AKA "INSERT INTO students", not "INSERT INTO courses")
+- We are wondering what all the symbols within our foo file mean --> we will explore
+  this in more depth at all? We can see some of the values/data from the csv files
+  and tables, though they're not formatted in the way they really should be. 
+
