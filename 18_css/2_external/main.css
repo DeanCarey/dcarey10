@@ -1,0 +1,27 @@
+body{
+  background: #666666; font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+  text-align: center; color: white; background: #BEBEBE
+}
+h2{
+  margin-top:0px;
+}
+.outside{
+  background: #767676; margin-right: 0px;
+}
+.inside{
+  float: left; width: 10%;
+}
+.inside1{
+  margin-left:10%; margin-top:0.1%;padding:10px;
+}
+ul{
+  list-style-type: none; margin: 0; padding: 0px;
+}
+li a{
+  display: block; color: white; text-decoration: none;
+}
+t{
+  color: #767676; background: #565656; width: 100%; float: right; text-align: right;
+}

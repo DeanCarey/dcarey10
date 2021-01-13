@@ -1,0 +1,14 @@
+Team Cowboy Pirates - Helena Williams, Dean Carey, Jason Chan
+SoftDev pd0
+K20 - - CSS basics
+2021-1-12
+
+OUR NOTES:
+First off, inline CSS is REALLY tedious. Nobody should use it.
+Also, w3schools is amazing as always - we were able to edit a template of theirs to see what style element was messing up our CSS!
+Overall, we refreshed our knowledge of divs, and then we got to sigh in relief as WAY TOO MUCH TIME -> a lil bit of time -> just 2 secs between versions.
+
+HOW2CSS:
+Inline - In an HTML tag, put in style="" to start adding things. All the CSS pairs go in between the quotation marks!
+Internal - In the head region, use the <style> tags to demarcate an area that basically acts like a built in stylesheet. Much faster than inline, and much easier to edit.
+External - Create a .css file, and link to it in the head of the HTML file. Allows you to apply the same styling to multiple pages, and is just COOL :)
