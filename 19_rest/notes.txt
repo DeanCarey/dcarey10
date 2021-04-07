@@ -1,0 +1,3 @@
+'With' command used to open file briefly for short operation, then automatically closes.
+img file corresponds to a url file
+.split(",") dot operator splits a given string into an array where each cell is divided at each comma.
