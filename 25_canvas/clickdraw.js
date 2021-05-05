@@ -1,3 +1,9 @@
+// Dean Carey & Alvin Wu
+// SoftDev pd1
+// K25 -- Canvas Based JS Drawing
+// 2021-05-04
+
+
 var c = document.getElementById("slate"); //fetch empty canvas
 var ctx = c.getContext("2d"); //drawing in a 2d canvas
 var pos = {x:0,y:0};
