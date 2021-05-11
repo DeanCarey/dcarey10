@@ -1,0 +1,29 @@
+Team DVD (Victoria Gao, Dean Carey)
+SoftDev pd0
+K28 -- Bubble Bubble Toil Trouble
+2021-05-11
+
+For demo 1, only 1 pop-up is displayed and it tells the user the contents of the cell that the user clicked on.
+The third argument of the addEventListener() statement isn't specified, so the browser uses the bubbling phase.
+
+For demo 2, the pop-ups moving from the inner-most elements to the outer-most elements is the bubbling phase. 
+First, the pop-up shows the contents of the cell that the user clicked on. Then, the browser moves on to the next immediate ancestor 
+element and the pop-up displays the HTML tags in the <tr> element containing the cell that the user clicked on. The browser continues 
+moving to ancestor elements until it reaches the <table> element. 
+
+If e.stopPropagation() isn't called in demo 3, the pop-ups move from the elements in <table> to the contents of the cell that 
+the user clicked on and then outwards to the <tr> element that the cell the user clicked on is in. Moving from the elements 
+in <table> to the <td> element (cell) is the capturing phase while moving from the cell to the <tr> element (row) is bubbling phase. 
+
+e.stopPropagation() prevents further propagation of the current event in the capturing and bubbling phases. However, if 
+the user clicks on a cell in the table, one pop-up still shows up in the browser because clicks on elements are still processed.
+
+The order that the event listeners in demo 4 is the same as the order of event listeners in demo 3, so the order in which the 
+event listeners are attached does not matter. The variable that determines whether the browser uses bubbling or capturing phase 
+is the third argument of addEventListener(). If the third variable is true, the capturing phase is used. If there isn't a third 
+argument, the bubbling phase is used.
+	-In demo 3, only addEventListener() of <table> has the third argument set to true. The HTML tags in the <table> tags are 
+	shown in the first pop-up since <table> is the outermost element in demo 3 that has an event listener.
+	-In demo 4, all of the addEventListener() statements had their third arguments set to true. Thus, the browser uses 
+	the capturing phase: the first pop-up shows the HTML tags in <table>, the next pop-up shows those in <tr>, and the last
+	pop-up shows those in <td>.
